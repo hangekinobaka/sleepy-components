@@ -10,13 +10,22 @@
   <img src="./src/assets/my-comp.gif">
 </p>
 
+### Components List
+* ImageClickable
+> An image compnent with a preview that fits its outer box and a zoom window inside which the user can move and zoom in-and-out the image.
+* Slide
+> A simlple slider layout, go from left to right.
+* Tab
+> A simlple tab layout with the basic switch function
+  
+
 ### Project setup
 
 ```bash
 npm install
 ```
 
-## Start
+### Start
 ```bash
 npm run storybook
 ```
@@ -31,7 +40,8 @@ import TabLayout from "@component/TabLayout";
 import Tab from "@component/Tab";
 
 /*
-The comps like Tab store itself inside TabLayout, they have to be used together.
+The comps like Tab stores an array of itselves inside the TabLayout, 
+thus they have to be used together.
 */
 ```
 
