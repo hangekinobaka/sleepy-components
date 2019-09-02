@@ -1,6 +1,5 @@
 import { storiesOf } from "@storybook/vue";
-import TabLayout from "@component/TabLayout";
-import Tab from "@component/Tab";
+import { TabLayout, Tab } from "@component";
 
 storiesOf("Tab", module)
   .add("default", () => ({

@@ -1,7 +1,6 @@
 import { storiesOf } from "@storybook/vue";
 
-import SliderLayout from "@component/SliderLayout.vue";
-import Slide from "@component/Slide.vue";
+import { Slide, SliderLayout } from "@component";
 
 const list = ["row1", "row2", "row3", "row4", "row5"];
 

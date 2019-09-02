@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/vue";
 
-import ImageClickable from "@component/ImageClickable";
+import { ImageClickable } from "@component";
 
 storiesOf("ImageClickable", module).add("Default", () => ({
   components: { ImageClickable },
