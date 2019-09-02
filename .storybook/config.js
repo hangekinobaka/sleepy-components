@@ -5,7 +5,7 @@ import Vue from "vue";
 import { configure } from "@storybook/vue";
 
 // --- Plugins
-import Modal from "@/plugin/Modal";
+import Modal from "@plugin/Modal";
 
 // automatically import all files ending in *.stories.js
 const req = require.context("../stories", true, /\.stories\.js$/);

@@ -21,9 +21,7 @@ export default {
       required: true,
       type: Number
     },
-    sliderInfo: {
-      default: {}
-    }
+    sliderInfo: {}
   },
   data: function() {
     return {
