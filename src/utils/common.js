@@ -22,9 +22,7 @@ export const createDivInBody = () => {
  *
  */
 export const getContainer = (Vue, options, root) => {
-  console.log("root ", root);
-
-  if (!root._dynamicContainer && options.injectModalContainer) {
+  if (!root._dynamicContainer) {
     const container = createDivInBody();
 
     new Vue({
@@ -34,4 +32,27 @@ export const getContainer = (Vue, options, root) => {
   }
 
   return root._dynamicContainer;
+};
+
+export const generateId = ((index = 0) => () => (index++).toString())();
+/**
+ *
+ * @param {Number} from  Lower limit
+ * @param {Number} to    Upper limit
+ * @param {Number} value Checked number value
+ *
+ * @return {Number} Either source value itself or limit value if range limits
+ *   are exceeded
+ */
+export const inRange = (from, to, value) => {
+  return value < from ? from : value > to ? to : value;
+};
+
+export const createModalEvent = (args = {}) => {
+  return {
+    id: generateId(),
+    timestamp: Date.now(),
+    canceled: false,
+    ...args
+  };
 };

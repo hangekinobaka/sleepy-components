@@ -2,7 +2,7 @@ import { storiesOf } from "@storybook/vue";
 import { TabLayout, Tab } from "@component";
 
 storiesOf("Tab", module)
-  .add("default", () => ({
+  .add("Default", () => ({
     components: { Tab, TabLayout },
     template: `
   <tab-layout>
@@ -11,7 +11,7 @@ storiesOf("Tab", module)
   </tab-layout>
   `
   }))
-  .add("three tabs", () => ({
+  .add("Three tabs", () => ({
     components: { Tab, TabLayout },
     template: `
   <tab-layout>
@@ -20,7 +20,7 @@ storiesOf("Tab", module)
     <tab label="tab3">this is tab 3</tab>
   </tab-layout>`
   }))
-  .add("four tabs", () => ({
+  .add("Four tabs", () => ({
     components: { Tab, TabLayout },
     template: `
   <tab-layout>

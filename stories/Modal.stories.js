@@ -1,23 +1,69 @@
 import { storiesOf } from "@storybook/vue";
-import {} from "@component";
+import { Modal } from "@component";
 
-storiesOf("Modal", module).add("default", () => ({
-  components: {},
-  template: `
+storiesOf("Modal", module)
+  .add("Dynamic", () => ({
+    template: `
     <button @click="showDynamicRuntimeModal">Show</button>
   `,
-  methods: {
-    showDynamicRuntimeModal() {
-      this.$modal.show({
-        template: `
-          <div class="example-modal-content">
-            <h1>This is created inline</h1>
-            <p>{{ text }}</p>
-            <p>Default Property: {{ foo }}</p>
+    methods: {
+      showDynamicRuntimeModal() {
+        this.$modal.show(
+          {
+            template: `
+          <div>
+            <h1>Dynamic Modal</h1>
+            <p>Some text from props: {{text}}</p>
           </div>
         `,
-        props: ["text", "foo"]
-      });
+            props: ["text"]
+          },
+          { text: "HAHAHAHHA" },
+          { buffer: false }
+        );
+      }
     }
-  }
-}));
+  }))
+  .add("Static", () => ({
+    components: { Modal },
+    template: `
+    <div>
+      <modal name="myModal" :delay=300>
+        <div>
+          <h1>Static Modal</h1>
+          <p>Some text from props: {{text}}</p>
+        </div>
+      </modal>
+
+      <button @click="showStaticModal">Show</button>
+    </div>
+    `,
+    data: () => ({ text: "Hmmmm" }),
+    methods: {
+      showStaticModal() {
+        this.$modal.show("myModal");
+      }
+    }
+  }))
+  .add("With Close Button", () => ({
+    components: { Modal },
+    template: `
+    <div>
+      <modal name="myModal" :clickToClose="false">
+        <h1>Are you sure?</h1>
+        <button @click="closeStaticModal">Yes</button>
+        <button @click="closeStaticModal">Canccel</button>      
+      </modal>
+
+      <button @click="showStaticModal">Show</button>
+    </div>
+    `,
+    methods: {
+      showStaticModal() {
+        this.$modal.show("myModal");
+      },
+      closeStaticModal() {
+        this.$modal.close("myModal");
+      }
+    }
+  }));

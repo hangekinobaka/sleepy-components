@@ -1,4 +1,4 @@
-import { Modal, Dialog, ModalContainer } from "@component";
+import { Modal, ModalContainer } from "@component";
 import { getContainer } from "@utils";
 
 const defaultComponentName = "Modal";
@@ -32,7 +32,6 @@ const Plugin = {
     this.rootInstance = null;
 
     const componentName = options.componentName || defaultComponentName;
-    const dynamicDefaults = options.dynamicDefaults || {};
     options.target = ModalContainer;
     /**
      * Plugin API
@@ -50,21 +49,26 @@ const Plugin = {
      * If the first argument 'modal' is an object or a function
      * The Dynamic Modal will be generated
      *
-     * params can have these config data
+     * `compProps` can have these config data
      * @param {VueObject} root You can pass the root Vue Object to it rather than the default one, which is `this.$root`
+     * `modalProps`
+     * @param {Boolean} buffer If the dynamic modal should be buffered (not removed when the modal is closed)
+     *
      */
-    const showDynamicModal = (modal, props, params, events) => {
+    const showDynamicModal = (modal, compProps = {}, modalProps = {}) => {
       /**
        * Get root for dynamic modal
        */
-      const root = params && params.root ? params.root : this.rootInstance;
+      const root =
+        modalProps && modalProps.root ? modalProps.root : this.rootInstance;
       const container = getContainer(Vue, options, root);
+      modalProps.isDynamic = true;
 
       /**
        * Show dynamic modal
        */
       if (container) {
-        container.add(modal, props, { ...dynamicDefaults, ...params }, events);
+        container.add(modal, { ...compProps }, { ...modalProps });
         return;
       }
 
@@ -86,10 +90,7 @@ const Plugin = {
           }
         }
       },
-      hide(name, params) {
-        Plugin.event.$emit("toggle", name, false, params);
-      },
-      toggle(name, params) {
+      close(name, params) {
         Plugin.event.$emit("toggle", name, undefined, params);
       }
     };
@@ -97,12 +98,6 @@ const Plugin = {
      * Sets custom component name (if provided)
      */
     Vue.component(componentName, Modal);
-    /**
-     * Registration of <Dialog/> component
-     */
-    if (options.dialog) {
-      Vue.component("VDialog", Dialog);
-    }
     /**
      * Registration of <ModalContainer/> component
      */
