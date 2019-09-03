@@ -21,6 +21,15 @@ import Modal from "@plugin/Modal";
 
 import { inRange } from "@utils";
 
+/**
+ * You can have these props to modify the Modal component
+ * @param {String} name required for static component, for the dynamic Modal, it generate a name with id as default
+ * @param {Number} delay time gap between the apperance of the overlay and the modal itselt
+ * @param {Boolean} isDynamic if it is a dynamic conponent, no need to pass, generate automatically
+ * @param {Boolean} clickToClose click the backgroud to close or not
+ * @param {Boolean} buffer only fo rthe dynamic Modal. When the modal is closed, do we store it as a buffer or remove it.
+ *
+ */
 export default {
   name: "Modal",
   props: {

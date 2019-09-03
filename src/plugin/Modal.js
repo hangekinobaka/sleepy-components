@@ -15,7 +15,6 @@ const UNSUPPORTED_ARGUMENT_ERROR =
 /**
  * options can have these config data
  * @param {String} componentName Use your prefered name of this plugin
- * @param {Object} dynamicDefaults
  *
  */
 const Plugin = {
