@@ -41,7 +41,7 @@ const Plugin = {
      * The Static Modal will be triggered by the event 'toggle'
      */
     const showStaticModal = (modal, params) => {
-      Plugin.event.$emit("toggle", modal, true, params);
+      this.event.$emit("toggle", modal, true, params);
     };
 
     /**

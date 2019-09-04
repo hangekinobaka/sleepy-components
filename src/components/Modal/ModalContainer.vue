@@ -35,7 +35,6 @@ export default {
         component,
         compProps
       });
-      console.log(this.modals);
 
       this.$nextTick(() => {
         this.$modal.show(name);

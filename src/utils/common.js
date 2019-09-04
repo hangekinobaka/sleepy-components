@@ -15,10 +15,10 @@ export const createDivInBody = () => {
 /**
  *
  * @param {VueConstructor} Vue  App vue object
- * @param {Object} options  The configuration for the component
- * @param {HTMLDivElement} root  App vue object *
+ * @param {Object} options  The configuration for the component. Have
+ * @param {Vue} root  App vue object with an additional _dynamicContainer propertity
  *
- * @return {HTMLDivElement} The dynamic container for your component
+ * @return {Vue} The dynamic container for your component
  *
  */
 export const getContainer = (Vue, options, root) => {
@@ -35,24 +35,3 @@ export const getContainer = (Vue, options, root) => {
 };
 
 export const generateId = ((index = 0) => () => (index++).toString())();
-/**
- *
- * @param {Number} from  Lower limit
- * @param {Number} to    Upper limit
- * @param {Number} value Checked number value
- *
- * @return {Number} Either source value itself or limit value if range limits
- *   are exceeded
- */
-export const inRange = (from, to, value) => {
-  return value < from ? from : value > to ? to : value;
-};
-
-export const createModalEvent = (args = {}) => {
-  return {
-    id: generateId(),
-    timestamp: Date.now(),
-    canceled: false,
-    ...args
-  };
-};

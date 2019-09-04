@@ -19,8 +19,6 @@
 <script>
 import Modal from "@plugin/Modal";
 
-import { inRange } from "@utils";
-
 /**
  * You can have these props to modify the Modal component
  * @param {String} name required for static component, for the dynamic Modal, it generate a name with id as default
@@ -61,9 +59,7 @@ export default {
       visibility: {
         modal: false,
         overlay: false
-      },
-
-      mutationObserver: null
+      }
     };
   },
   /**
