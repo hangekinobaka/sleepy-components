@@ -60,11 +60,13 @@ export default {
 
 <style lang="scss">
 .my-tab-layout {
+    width: 100%;
   position: relative;
   display: flex;
   flex: 1;
   flex-direction: column;
   ul.my-tab-label-list {
+    width: 100%;
     display: flex;
     align-items: center;
     display: flex;
@@ -109,6 +111,7 @@ export default {
   }
 
   .my-tab-panel {
+    width: 100%;
     flex-direction: column;
     overflow: hidden;
     position: relative;
