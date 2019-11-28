@@ -8,3 +8,5 @@ export { default as TabLayout } from "./Tab/TabLayout.vue";
 
 export { default as Modal } from "./Modal/Modal.vue";
 export { default as ModalContainer } from "./Modal/ModalContainer.vue";
+
+export { default as Spinner } from "./Spinner/Spinner.vue";
