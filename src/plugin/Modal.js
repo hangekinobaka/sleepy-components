@@ -63,11 +63,12 @@ const Plugin = {
       const container = getContainer(Vue, options, root);
       modalProps.isDynamic = true;
 
+      const comp = Vue.extend(modal);
       /**
        * Show dynamic modal
        */
       if (container) {
-        container.add(modal, { ...compProps }, { ...modalProps });
+        container.add(comp, { ...compProps }, { ...modalProps });
         return;
       }
 

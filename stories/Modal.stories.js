@@ -11,9 +11,11 @@ storiesOf("Modal", module)
         this.$modal.show(
           {
             template: `
-          <div>
-            <h1>Dynamic Modal</h1>
-            <p>Some text from props: {{text}}</p>
+          <div class="modal-box">
+            <div class="modal-body">
+              <h1>Dynamic Modal</h1>
+              <p>Some text from props: {{text}}</p>
+            </div>
           </div>
         `,
             props: ["text"]
@@ -29,9 +31,11 @@ storiesOf("Modal", module)
     template: `
     <div>
       <modal name="myModal" :delay=300>
-        <div>
-          <h1>Static Modal</h1>
-          <p>Some text from props: {{text}}</p>
+        <div class="modal-box">
+          <div class="modal-body">
+            <h1>Static Modal</h1>
+            <p>Some text from props: {{text}}</p>
+          </div>
         </div>
       </modal>
 
@@ -50,9 +54,13 @@ storiesOf("Modal", module)
     template: `
     <div>
       <modal name="myModal" :clickToClose="false">
-        <h1>Are you sure?</h1>
-        <button @click="closeStaticModal">Yes</button>
-        <button @click="closeStaticModal">Canccel</button>      
+        <div class="modal-box">
+          <div class="modal-body">
+            <h1>Are you sure?</h1>
+            <button @click="closeStaticModal">Yes</button>
+            <button @click="closeStaticModal">Canccel</button>   
+          </div>
+        </div>   
       </modal>
 
       <button @click="showStaticModal">Show</button>

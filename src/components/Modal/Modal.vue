@@ -1,16 +1,20 @@
 <template>
-  <transition name="overlay-fade">
-    <div v-if="visibility.overlay" ref="modalOverlay" class="modal-overlay" :data-modal="name">
+  <transition name="overlay-fade" class="modal">
+    <div
+      v-if="visibility.overlay"
+      ref="modalOverlay"
+      class="modal-overlay"
+      :data-modal="name"
+    >
       <div
-        class="modal-background-click"
+        class="modal-background"
         @mousedown.self="handleBackgroundClick"
         @touchstart.self="handleBackgroundClick"
-      ></div>
-      <div class="modal-layout">
+      >
         <transition name="modal-fade">
-          <div v-if="visibility.modal" ref="modal" class="modal-box">
+          <template v-if="visibility.modal" ref="modal">
             <slot />
-          </div>
+          </template>
         </transition>
       </div>
     </div>
@@ -134,66 +138,65 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="scss">
 .modal-overlay {
   position: fixed;
   box-sizing: border-box;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.2);
   z-index: 999;
-  opacity: 1;
-}
 
-.modal-overlay .modal-background-click {
-  position: fixed;
-  width: 100%;
-  min-height: 100%;
-  height: auto;
-}
-.modal-layout {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
-}
-.modal-box {
-  position: fixed;
-  margin: auto;
-  left: 0;
-  right: 0;
-  height: auto;
-  min-height: 300px;
-  min-width: 40%;
-  max-height: 70%;
-  max-width: 80%;
-  background-color: white;
-  text-align: left;
-  border-radius: 3px;
-  box-shadow: 0 20px 60px -2px rgba(27, 33, 58, 0.4);
-  padding: 0;
-}
 
-.overlay-fade-enter-active,
-.overlay-fade-leave-active {
-  transition: all 0.2s;
-}
+  .modal-background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
 
-.overlay-fade-enter,
-.overlay-fade-leave-active {
-  opacity: 0;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-grow: 1;
 
-.modal-fade-enter-active,
-.modal-fade-leave-active {
-  transition: all 0.4s;
-}
+    .modal-box {
+      position: fixed;
+      z-index: 1001;
+      .modal-body {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 0 20px 60px -2px rgba(27, 33, 58, 0.4);
+      }
+    }
+  }
 
-.modal-fade-enter,
-.modal-fade-leave-active {
-  opacity: 0;
-  transform: translateY(-20px);
+  .overlay-fade-enter-active,
+  .overlay-fade-leave-active {
+    transition: all 0.2s;
+  }
+
+  .overlay-fade-enter,
+  .overlay-fade-leave-active {
+    opacity: 0;
+  }
+
+  .modal-fade-enter-active,
+  .modal-fade-leave-active {
+    transition: all 0.4s;
+  }
+
+  .modal-fade-enter,
+  .modal-fade-leave-active {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }
 </style>
