@@ -10,3 +10,9 @@ export { default as Modal } from "./Modal/Modal.vue";
 export { default as ModalContainer } from "./Modal/ModalContainer.vue";
 
 export { default as Spinner } from "./Spinner/Spinner.vue";
+
+export { default as Card } from "./common/Card.vue";
+export { default as ComponentHeader } from "./common/ComponentHeader.vue";
+export { default as ComponentBody } from "./common/ComponentBody.vue";
+
+export { default as ImageSelectable } from "./ImageSelection/ImageSelectable.vue";

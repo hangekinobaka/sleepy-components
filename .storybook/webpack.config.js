@@ -16,7 +16,8 @@ module.exports = ({ config }) => {
     "@component": path.resolve(__dirname, "../src/components"),
     "@plugin": path.resolve(__dirname, "../src/plugin"),
     "@utils": path.resolve(__dirname, "../src/utils"),
-    "@layout": path.resolve(__dirname, "../src/layout")
+    "@layout": path.resolve(__dirname, "../src/layout"),
+    "@assets": path.resolve(__dirname, "../src/assets")
   };
 
   config.module.rules.push({
