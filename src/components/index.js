@@ -16,3 +16,4 @@ export { default as ComponentHeader } from "./common/ComponentHeader.vue";
 export { default as ComponentBody } from "./common/ComponentBody.vue";
 
 export { default as ImageSelectable } from "./ImageSelection/ImageSelectable.vue";
+export { default as ImageChoiceSelection } from "./ImageSelection/ImageChoiceSelection.vue";

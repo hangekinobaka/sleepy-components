@@ -28,7 +28,7 @@ storiesOf("ImageQuestion", module).add("ImageSelectable", () => ({
   data: () => ({}),
   methods: {},
   template: `
-  <div>
+  <div style="max-height: 100vh; overflow-y: auto;">
     <image-selectable
       style="width:200px;" 
       img-url="https://icon-library.net/images/fake-icon/fake-icon-22.jpg"
