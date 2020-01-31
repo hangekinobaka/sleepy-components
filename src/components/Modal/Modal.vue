@@ -55,6 +55,10 @@ export default {
     buffer: {
       type: Boolean,
       default: true
+    },
+    parent: {
+      type: HTMLElement,
+      default: undefined
     }
   },
   data() {
@@ -132,7 +136,7 @@ export default {
      */
     handleBackgroundClick() {
       if (this.clickToClose) {
-        this.toggle(false);
+        this.$modal.close(this.name);
       }
     }
   }

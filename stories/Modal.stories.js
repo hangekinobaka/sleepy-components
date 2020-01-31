@@ -74,4 +74,43 @@ storiesOf("Modal", module)
         this.$modal.close("myModal");
       }
     }
+  }))
+  .add("Change Modal Parent", () => ({
+    computed: {
+      modalParent() {
+        return document.getElementById("target");
+      }
+    },
+    template: `
+      <app-wrapper :style= "{background:'#fff'}">
+        <app-body :style="{background:'#eee'}" id="target">My App's Main Content</app-body>
+        <app-footer :style="{background:'tomato'}">
+          <p>My App's Footer</p>
+          <button @click="showDynamicRuntimeModal">Show</button>
+        </app-footer>
+      </app-wrapper>
+    `,
+    methods: {
+      showDynamicRuntimeModal() {
+        this.$modal.show(
+          {
+            template: ` 
+            <div class="modal-box">
+              <div class="modal-body">
+                <h1>Dynamic Modal</h1>
+                <p>Some text from props: {{text}}</p>
+              </div>
+            </div>`,
+            props: ["text"]
+          },
+          { text: "HAHAHAHHA" },
+          {
+            name: "myModal",
+            parent: this.modalParent,
+            buffer: false,
+            closeOnBackgroundClick: true
+          }
+        );
+      }
+    }
   }));

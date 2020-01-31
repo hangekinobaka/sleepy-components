@@ -5,9 +5,10 @@
  * @return {HTMLDivElement} The div you just created and on the top level of body
  *
  */
-export const createDivInBody = () => {
+export const createDiv = parent => {
+  if (!parent) parent = document.body;
   const div = document.createElement("div");
-  document.body.appendChild(div);
+  parent.appendChild(div);
 
   return div;
 };
@@ -23,7 +24,7 @@ export const createDivInBody = () => {
  */
 export const getContainer = (Vue, options, root) => {
   if (!root._dynamicContainer) {
-    const container = createDivInBody();
+    const container = createDiv(options.parent);
 
     new Vue({
       parent: root,

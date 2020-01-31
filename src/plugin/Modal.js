@@ -60,6 +60,7 @@ const Plugin = {
        */
       const root =
         modalProps && modalProps.root ? modalProps.root : this.rootInstance;
+      options.parent = modalProps.parent;
       const container = getContainer(Vue, options, root);
       modalProps.isDynamic = true;
 
@@ -92,6 +93,11 @@ const Plugin = {
       },
       close(name, params) {
         Plugin.event.$emit("toggle", name, undefined, params);
+      },
+      clean() {
+        const container = Plugin.rootInstance._dynamicContainer;
+        container.$el.parentNode.removeChild(container.$el);
+        Plugin.rootInstance._dynamicContainer = undefined;
       }
     };
     /**

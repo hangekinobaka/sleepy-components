@@ -47,6 +47,10 @@ export default {
     },
     // When start touching, detect if it is a zoom gesture or move gesture
     touchStartHandler(e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      e.stopPropagation();
+
       this.startPoints = e.touches; // get first points
 
       // Decide if it is multi touch
@@ -67,6 +71,10 @@ export default {
       }
     },
     touchMoveHandler(e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      e.stopPropagation();
+
       const movingPoints = e.touches; // get moving motion points
       let movingPoint;
 
@@ -85,6 +93,10 @@ export default {
       this.setImg();
     },
     touchEndHandler(e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      e.stopPropagation();
+
       if (this.isZoomGesture && e.touches.length >= 2) {
         this.isZoomGesture = false;
       }
