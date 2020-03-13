@@ -1,8 +1,20 @@
-<p align="center">
-
 # Vue.js sleepy-components
 
-##### This is a project containing some of useful components I wrote before for vue.js.
+See the Demo [Here](./storybook-static/index.html)
+
+- [Vue.js sleepy-components](#vuejs-sleepy-components)
+  - [This is a project containing some of useful components I wrote before for vue.js.](#this-is-a-project-containing-some-of-useful-components-i-wrote-before-for-vuejs)
+  - [Components List](#components-list)
+  - [Project setup](#project-setup)
+  - [Start](#start)
+  - [Examples](#examples)
+    - [Tab](#tab)
+    - [Modal](#modal)
+      - [install plugin](#install-plugin)
+      - [static usage](#static-usage)
+        - [dynamic usage](#dynamic-usage)
+
+## This is a project containing some of useful components I wrote before for vue.js.
 This project means to only have the basic function for each components. I have collected some useful pieces from other projects and simplified it. Feel free to copy it to your project and modify it as you wish. I hope these code can make your life easier.
 
 
@@ -12,7 +24,7 @@ This project means to only have the basic function for each components. I have c
   <img src="./src/assets/my-comp.gif">
 </p>
 
-### Components List
+## Components List
 * ImageClickable
 > An image compnent with a preview that fits its outer box and a zoom window inside which the user can move and zoom in-and-out the image.
 * Slide
@@ -23,21 +35,21 @@ This project means to only have the basic function for each components. I have c
 > A simlple modal with the basic show and hide ( remove ) function. This is a plugin, can use it both statically or dynamically.
   
 
-### Project setup
+## Project setup
 This setup is for storybook and you can test the components here.
 
 ```bash
 npm install
 ```
 
-### Start
+## Start
 ```bash
 npm run storybook
 ```
 
-### Examples
+## Examples
 
-#### Tab
+### Tab
 
 I'll take `Tab` as an example for normal components.
 First of all, you need to set up your Vue.js correctly.
@@ -63,12 +75,12 @@ thus they have to be used together.
 </tab-layout>
 ```  
 
-#### Modal 
+### Modal 
   
 I'll take `Modal` as an example for plugin components.
 For this Modal component, it can be used as both dynamic conponent or static conponent.
 
-##### install plugin
+#### install plugin
 Please install your plugin at your vue's `index.js` file, or something similar.   
 in this project, as we use storybook, I installed the plugin at `.storybook\config.js`. Check it if you want. ^_<
 ```javascript
@@ -79,7 +91,7 @@ import Modal from "@plugin/Modal";
 Vue.use(Modal);
 ```   
    
-##### static usage
+#### static usage
 ```vue
 <template>
 <div>

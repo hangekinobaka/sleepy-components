@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icons/benesseIncorrect</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Benesse-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-Overview---Special" transform="translate(-372.000000, -158.000000)">
+            <g id="Icons" transform="translate(64.000000, 158.000000)">
+                <g id="Incorrect" transform="translate(240.000000, 0.000000)">
+                    <g id="Icon/Close/Duotone" transform="translate(68.000000, 0.000000)">
+                        <polygon id="Background" fill="#FFFFFF" fill-rule="nonzero" points="50.3821933 7.37 31.997417 25.7547763 13.6126407 7.37 7.37 13.6126407 25.7547763 31.997417 7.37 50.3821933 13.6126407 56.624834 31.997417 38.2400577 50.3821933 56.624834 56.624834 50.3821933 38.2400577 31.997417 56.624834 13.6126407"></polygon>
+                        <path d="M53.5363778,15.6810969 L37.2200577,31.997417 L55.604834,50.3821933 L50.3621933,55.624834 L31.977417,37.2400577 L13.5926407,55.624834 L8.35,50.3821933 L26.7347763,31.997417 L8.35,13.6126407 L13.5926407,8.37 L31.977417,26.7547763 L45.2668971,13.4652962 L53.5363778,15.6810969 Z" id="Color" fill="#3551EB" fill-rule="evenodd"></path>
+                        <path d="M50.384834,9.37264069 L32.0000577,27.757417 L13.6152814,9.37264069 L9.37264069,13.6152814 L27.757417,32.0000577 L9.37264069,50.384834 L13.6152814,54.6274747 L32.0000577,36.2426984 L50.384834,54.6274747 L54.6274747,50.384834 L36.2426984,32.0000577 L54.6274747,13.6152814 L50.384834,9.37264069 Z M59.8701154,50.384834 L50.384834,59.8701154 L32.0000577,41.4853391 L13.6152814,59.8701154 L4.13,50.384834 L22.5147763,32.0000577 L4.13,13.6152814 L13.6152814,4.13 L32.0000577,22.5147763 L50.384834,4.13 L59.8701154,13.6152814 L41.4853391,32.0000577 L59.8701154,50.384834 Z" id="Outline" fill="#424B54" fill-rule="nonzero"></path>
+                        <polygon id="Shape" fill-opacity="0.24" fill-rule="nonzero" points="21.1798937 48.1158007 13.9426407 55.3530537 8.7 50.110413 12.910413 45.9 21.1798937 48.1158007"></polygon>
+                    </g>
+                </g>
+            </g>
+            <g id="Slices" transform="translate(132.000000, 158.000000)"></g>
+        </g>
+    </g>
+</svg>
